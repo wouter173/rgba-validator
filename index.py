@@ -26,5 +26,7 @@ validColor('rgb(255,256,255)');
 validColor('rgb(100%,100%,101%)');
 validColor('rgba(0,0,0,-1)');
 validColor('rgba(0,0,0,1.1)');
+validColor('rgb(0,0,,0)');
+validColor('abc(0,0,0)');
 
 

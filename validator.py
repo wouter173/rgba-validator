@@ -8,16 +8,17 @@ def validColor(rgba):
   print(deco.color(message, color))
 
 def isValidRGB(rgba):
-  values = 3
 
   rgbMethod = rgba.split("(")[0]
   if rgbMethod == "rgba":
     values = 4
+  elif rgbMethod == "rgb":
+    values = 3
+  else: 
+    return False
+  
 
   splitted = rgba.split(",")
-  for i,l in enumerate(splitted):
-    if l == '':
-      del splitted[i]
   
   if values != len(splitted):
     return False
@@ -26,6 +27,9 @@ def isValidRGB(rgba):
   splitted[values - 1] = splitted[values - 1][:-1]
 
   for i,l in enumerate(splitted):
+    if l == "":
+      return False
+
     percentage = False
     if "%" in l:
       l = l.strip("%")
